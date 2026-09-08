@@ -3,12 +3,13 @@
 ## Contents
 
 1. Product truth brief
-2. Choosing a protagonist
-3. Scene archetypes
-4. Evidence hierarchy
-5. Visual metaphor tests
-6. Copy rules
-7. Originality and anti-slop review
+2. Scene matrix
+3. Choosing a protagonist
+4. Scene roles
+5. Evidence hierarchy
+6. Visual metaphor tests
+7. Copy rules
+8. Originality review
 
 ## 1. Product truth brief
 
@@ -17,17 +18,36 @@ Write this compact brief before layout work:
 | Field | Required answer |
 |---|---|
 | Audience | Who is deciding, and in what context? |
+| Traffic source | What brought this visitor here, and what promise preceded the page? |
+| Awareness | What does the visitor already understand about the problem and product? |
 | Existing behavior | What are they doing immediately before using the product? |
 | Tension | What goes wrong, takes too long, or remains uncertain? |
+| Primary objection | What is the strongest reason they may not believe or choose the product? |
 | Mechanism | What does the product actually do? |
 | Proof | What real artifact can demonstrate the mechanism? |
 | Outcome | What becomes measurably or visibly different? |
 | Conversion | What is the single next action? |
+| Claim sources | Which file, product state, supplied artifact, or approved source supports each claim? |
 
 Reject unsupported superlatives. If proof is not available, demonstrate the
 mechanism honestly instead of manufacturing social proof.
 
-## 2. Choosing a protagonist
+## 2. Scene matrix
+
+Connect every scene to a visitor question, factual source, and fallback before
+layout work begins:
+
+| Scene | Visitor question | Claim and source | Evidence | Visual object | Motion purpose | Mobile fallback | Reduced-motion state | CTA relevance |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+
+Use only the rows the product supports. A motion purpose must state what the
+visitor should notice or understand. "Add energy" is not enough. Remove a row
+when it repeats a claim, lacks a source, or exists only to fill space.
+
+For a focused refactor, create rows only for affected scenes and record the
+existing behavior that must remain intact.
+
+## 3. Choosing a protagonist
 
 A protagonist gives continuity to the page. Choose something already native to
 the product:
@@ -48,7 +68,7 @@ The protagonist should be:
 
 Do not invent a metaphor first and force the product into it.
 
-## 3. Scene archetypes
+## 4. Scene roles
 
 ### Hook
 
@@ -142,7 +162,7 @@ stronger than a comparison grid built from unverifiable claims.
 Echo the interruption scene in its successful state. Then present the primary
 CTA and one optional secondary action.
 
-## 4. Evidence hierarchy
+## 5. Evidence hierarchy
 
 Prefer evidence in this order:
 
@@ -156,7 +176,11 @@ Prefer evidence in this order:
 Avoid fake terminal output, fabricated avatars, invented logos, and placeholder
 metrics. Mark prototypes or simulated examples as such.
 
-## 5. Visual metaphor tests
+For each artifact, record its source and whether it is current, approved, and
+safe to publish. When proof is unavailable, narrow the claim or show the
+mechanism directly. Do not turn an unsupported claim into decorative evidence.
+
+## 6. Visual metaphor tests
 
 Keep a metaphor only if it passes all five tests:
 
@@ -169,7 +193,7 @@ Keep a metaphor only if it passes all five tests:
 
 If it fails, return to the product's literal objects.
 
-## 6. Copy rules
+## 7. Copy rules
 
 - Lead with nouns and verbs native to the product.
 - Keep the hero promise short enough to remember.
@@ -180,7 +204,7 @@ If it fails, return to the product's literal objects.
 - Remove sentences that could appear unchanged on a different product's site.
 - Avoid urgency, fear, or hype that the product cannot support.
 
-## 7. Originality and anti-slop review
+## 8. Originality review
 
 Before accepting the concept, ask:
 

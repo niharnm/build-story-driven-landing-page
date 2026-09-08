@@ -1,4 +1,4 @@
 interface:
   display_name: "Story-Driven Landing Pages"
-  short_description: "Build cinematic, evidence-led landing pages"
-  default_prompt: "Use $build-story-driven-landing-page to design and implement a distinctive, scroll-driven landing page for my product."
+  short_description: "Turn product proof into memorable landing pages"
+  default_prompt: "Use $build-story-driven-landing-page to turn my product's real mechanism and proof into a responsive landing page with purposeful motion."

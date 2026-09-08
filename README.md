@@ -1,149 +1,151 @@
 <h1 align="center">Story-Driven Landing Pages</h1>
 
 <p align="center">
-  <strong>Build landing pages as product demonstrations—not decorative brochures.</strong>
+  <strong>Turn real product mechanics and proof into a landing page people can follow.</strong>
 </p>
 
 <p align="center">
-  <code>$build-story-driven-landing-page</code>
+  <a href="https://skills.sh/niharnm/build-story-driven-landing-page/build-story-driven-landing-page">
+    <img src="https://skills.sh/b/niharnm/build-story-driven-landing-page" alt="skills.sh installs">
+  </a>
 </p>
 
----
+An Agent Skill for designing, building, or refactoring product landing pages
+whose copy, layout, motion, and conversion path tell one coherent story. It is
+made for React, Next.js, Astro, static HTML/CSS/JS, and comparable web stacks,
+while following the host repository's existing architecture and design system.
 
-This skill is a reusable playbook for building **distinctive, evidence-led
-landing pages** with the same level of intentionality as Proofjury—without
-copying its branding, copy, assets, or signature visual identity.
+The skill starts from product truth, connects every claim to evidence, and uses
+animation only when it explains cause, state, or progress. It does not generate
+a dressed-up section template.
 
-It supports **React**, **Next.js**, and comparable frontend stacks.
+## Install
+
+```bash
+npx skills add niharnm/build-story-driven-landing-page \
+  --skill build-story-driven-landing-page
+```
+
+Then ask your agent:
+
+```text
+Use $build-story-driven-landing-page to turn my product's real mechanism and
+proof into a responsive landing page with purposeful motion.
+```
+
+[View the skill on skills.sh](https://skills.sh/niharnm/build-story-driven-landing-page/build-story-driven-landing-page)
+
+## When it fits
+
+Use it for:
+
+- a new product landing page or marketing homepage;
+- a launch site that must explain an unfamiliar mechanism;
+- a generic homepage that needs a stronger story and clearer proof;
+- a scroll-directed product demonstration;
+- an audit of a marketing page's story, proof, motion, mobile behavior, or
+  conversion path;
+- a focused refactor of weak scenes, motion, mobile behavior, or conversion.
+
+Do not use it for dashboards, application screens, or components outside a
+marketing page.
 
 ## The core idea
 
-Most landing-page builders start with a list of sections:
+Most landing-page generators start with a section list:
 
 ```text
-Hero → Feature cards → Testimonials → Pricing → CTA
+Hero -> feature cards -> testimonials -> pricing -> CTA
 ```
 
-This skill starts with a product story:
+This skill starts with a product decision:
 
 ```text
-Audience → Existing behavior → Tension → Product intervention
-         → Evidence → Outcome → CTA
+Audience -> existing behavior -> tension -> product intervention
+         -> real proof -> outcome -> CTA
 ```
 
-| Typical landing page | Story-driven landing page |
-|---|---|
-| Starts with a layout template | Starts with product truth |
-| Describes features | Demonstrates the mechanism |
-| Uses motion as decoration | Uses motion to explain cause and effect |
-| Makes broad claims | Places evidence beside each claim |
-| Shrinks desktop for mobile | Designs mobile as its own experience |
-| Treats a passing build as completion | Verifies the complete rendered story |
+| Typical generated page | Story-driven page |
+| --- | --- |
+| Starts from a layout pattern | Starts from product truth and visitor context |
+| Describes features | Demonstrates the product mechanism |
+| Adds motion for decoration | Uses motion to explain cause and state |
+| Separates claims from proof | Places evidence beside each claim |
+| Shrinks desktop for mobile | Gives compact and reduced-motion modes their own behavior |
+| Stops after a passing build | Inspects the complete rendered story |
 
-## What the skill does
+## What the skill makes the agent do
 
-- **Establishes product truth** before visual implementation.
-- **Builds a narrative spine** from hook through proof and resolution.
-- **Chooses the minimum viable motion level** instead of adding effects by
-  default.
-- **Creates a semantic visual system** for typography, surfaces, structure,
-  emphasis, and evidence.
-- **Implements maintainable scene architecture** in the existing frontend
-  stack.
-- **Requires real mobile and reduced-motion behavior.**
-- **Verifies the experience** at critical scroll states, not only the hero and
-  footer.
+1. **Choose the right scope.** Audit, focused refactor, and full-build requests
+   do not receive the same amount of work.
+2. **Write a product-truth brief.** Audience, traffic source, objection,
+   mechanism, proof, and conversion are explicit before layout begins.
+3. **Plan a sourced scene sequence.** Every scene records its visitor question,
+   claim source, evidence, visual object, motion purpose, and static fallback.
+4. **Use the simplest useful motion tier.** CSS, DOM or SVG timelines, and
+   optional WebGL are choices, not defaults.
+5. **Verify what shipped.** Desktop, mobile, reduced motion, keyboard behavior,
+   console output, conversion paths, and measured speed are checked with direct
+   evidence when the environment permits it.
 
-## The narrative spine
+## Proofjury as a reference
 
-Use five to eight scenes, depending on what the product can honestly support:
+[Proofjury](https://github.com/kevincui1034/proofjury) is one benchmark for the
+method. Its landing page makes a deploy command the protagonist, builds pressure
+through concrete failure evidence, stages the product's intervention, changes
+visual worlds at the verdict, and ends with the successful state.
 
-| Scene | Purpose |
-|---|---|
-| **1. Hook** | Introduce one protagonist and one sharp promise. |
-| **2. Momentum** | Show the existing workflow or pressure building. |
-| **3. Tension** | Make the failure, cost, or gap concrete. |
-| **4. Interruption** | Demonstrate the product changing the trajectory. |
-| **5. Proof** | Show real output, evidence, or before-and-after behavior. |
-| **6. Compounding value** | Explain memory, reuse, collaboration, or scale. |
-| **7. Differentiation** | Show why the mechanism is structurally different. |
-| **8. Resolution** | Present the desired outcome and conversion action. |
+The transferable lesson is not its courtroom identity. It is the alignment of
+product mechanism, evidence, visual hierarchy, and motion energy. The skill
+explicitly prevents copying a reference site's branding, wording, assets, or
+signature metaphor.
 
-> Every scene answers one question and introduces at most one primary visual
-> idea.
+See [open-source reference patterns](references/open-source-patterns.md) for a
+broader set of implementation sources and the rules extracted from them.
 
-## Motion is a tool, not the idea
+## Motion tiers
 
-The skill selects the simplest motion tier that carries the story:
+| Tier | Use |
+| --- | --- |
+| **Editorial** | Typography, composition, CSS transitions, and small local reveals |
+| **DOM or SVG** | Selective pinning, scene timelines, paths, and decisive threshold effects |
+| **Atmospheric WebGL** | One lightweight visual atmosphere connected to the same story state |
 
-| Tier | Appropriate use |
-|---|---|
-| **Editorial** | Typography, layout, CSS transitions, and small reveals |
-| **Cinematic DOM/SVG** | Selective pinning, scene timelines, paths, and decisive impacts |
-| **Atmospheric WebGL** | One lightweight visual atmosphere connected to story state |
+Continuous motion can follow scroll progress. A decisive event, such as a
+collision, verdict, snap, merge, or success state, should be a short time-based
+effect at an explicit threshold. The distinction keeps the event legible at
+different scroll speeds.
 
-Continuous travel can follow scroll progress. Decisive moments—such as a
-verdict, collision, snap, or success state—use short time-based animations at
-explicit thresholds.
+WebGL is optional. It does not repair a weak product story.
 
-WebGL is optional. A weak product story does not become stronger because it has
-a shader.
-
-## What it refuses to produce
-
-The skill actively pushes back against:
+## What it refuses to make
 
 - unsupported metrics, customers, testimonials, or integrations;
-- fake terminal output and decorative evidence;
+- fake terminal output or decorative evidence;
 - interchangeable feature-card grids;
-- gradient headlines and glass panels used without product rationale;
-- identical fade-up animation on every section;
-- desktop timelines forced into hostile mobile layouts;
-- inaccessible experiences that hide content without animation;
-- copied reference-site branding or signature metaphors.
+- copied reference-site identity;
+- the same fade-up animation on every section;
+- desktop pins forced into a poor mobile layout;
+- content hidden when animation fails or reduced motion is enabled;
+- placeholder form IDs, dead links, or fake controls.
 
-## Use it
-
-Invoke the skill directly:
-
-```text
-Use $build-story-driven-landing-page to design and implement a distinctive,
-scroll-driven landing page for my product.
-```
-
-It should also activate for requests such as:
-
-```text
-Build a landing page for my product.
-
-Redesign this homepage so it does not look generic.
-
-Create a cinematic, scroll-driven launch site.
-
-Add stronger storytelling and motion to this Next.js landing page.
-```
-
-## What is included
+## Included guidance
 
 | File | Role |
-|---|---|
-| [`SKILL.md`](SKILL.md) | Core operating rules and implementation workflow |
-| [`references/story-system.md`](references/story-system.md) | Product truth, scene design, evidence, copy, and originality |
-| [`references/motion-implementation.md`](references/motion-implementation.md) | GSAP, Lenis, SVG, theme transitions, WebGL, and cleanup |
-| [`references/verification.md`](references/verification.md) | Viewport, accessibility, performance, conversion, and diff checks |
-| [`agents/openai.yaml`](agents/openai.yaml) | Skill-list metadata and default invocation prompt |
+| --- | --- |
+| [`SKILL.md`](SKILL.md) | Scope routing, constraints, and the full-build workflow |
+| [`references/story-system.md`](references/story-system.md) | Product truth, scene planning, evidence, copy, and originality |
+| [`references/motion-implementation.md`](references/motion-implementation.md) | Library choice, responsive motion, scroll timing, SVG, media, and optional WebGL |
+| [`references/open-source-patterns.md`](references/open-source-patterns.md) | Source-backed patterns from strong public implementations |
+| [`references/verification.md`](references/verification.md) | Browser evidence, accessibility, speed, conversion, and diff checks |
+| [`agents/openai.yaml`](agents/openai.yaml) | Skill-list metadata and default prompt |
 
 ## Completion standard
 
-A successful production build is necessary, but it is not enough.
+A production build is necessary when the project provides one, but it is not
+enough. The agent must also inspect representative viewports, key scroll states,
+reduced-motion output, keyboard focus, console and network output, real action
+destinations, and the final diff. Every result is reported as pass, fail,
+unverified, or not applicable, with evidence or a specific scope reason.
 
-Before calling a landing page complete, the skill requires:
-
-- lint, type, test, and production-build checks where available;
-- desktop, mobile, and reduced-motion inspection;
-- verification before, during, and after decisive scroll thresholds;
-- keyboard, focus, overflow, console, CTA, and form-state checks;
-- a final review for invented proof, copied identity, unused machinery, and
-  unrelated changes.
-
-The finished page should remain understandable when every animation is removed.
+The page must remain understandable when every animation is removed.
