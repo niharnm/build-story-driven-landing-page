@@ -1,0 +1,36 @@
+name: Validate skill
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Validate Agent Skills format
+        run: uvx --from skills-ref==0.1.1 agentskills validate "$GITHUB_WORKSPACE"
+      - name: Verify referenced files
+        run: |
+          test -f references/story-system.md
+          test -f references/motion-implementation.md
+          test -f references/open-source-patterns.md
+          test -f references/verification.md
+          test -f agents/openai.yaml
+      - name: Verify skills CLI discovery
+        env:
+          DISABLE_TELEMETRY: "1"
+          NO_COLOR: "1"
+        run: |
+          result="$(npx --yes skills@1.5.24 add . --list)"
+          printf '%s\n' "$result"
+          printf '%s\n' "$result" | grep -q "Found 1 skill"
+          printf '%s\n' "$result" | grep -q "build-story-driven-landing-page"

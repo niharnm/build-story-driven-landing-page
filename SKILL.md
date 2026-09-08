@@ -1,204 +1,186 @@
 ---
 name: build-story-driven-landing-page
-description: Design, implement, or refactor distinctive product landing pages using evidence-led storytelling, scene-based composition, restrained scroll choreography, semantic theme transitions, and production-quality responsive, accessible, and performant behavior. Use for landing pages, marketing homepages, launch sites, cinematic or scroll-driven product stories, Proofjury-style experiences, and requests for polished non-generic web UI in React, Next.js, or comparable frontend stacks.
+description: Audit, design, implement, or refactor evidence-led product landing pages with product storytelling, scene sequencing, and purposeful scroll animation. Use for marketing homepages, launch sites, and conversion pages in React, Next.js, Astro, or static HTML/CSS/JS when product proof and responsive motion must work together. Do not use for dashboards, application screens, or components outside a marketing page.
 ---
 
 # Build Story-Driven Landing Pages
 
-Build an original product story rather than a collection of fashionable
-sections. Borrow interaction systems from references, never their identity,
-copy, assets, evidence, or signature metaphor.
+Build an original product story, not a stack of fashionable sections. Make the
+product's real mechanism visible, place proof beside claims, and use motion only
+when it improves understanding.
 
-## Operating rules
+## Select the scope
 
-- Inspect repository instructions, the existing stack, product copy, routes,
-  design tokens, and reusable components before editing.
-- If the user requests analysis or critique only, report findings without
-  changing files.
-- If the user requests implementation, carry it through responsive behavior,
-  reduced motion, form states, validation, and final diff review.
-- If a reference repository or site is provided, inspect both source structure
-  and rendered behavior when possible. Separate verified behavior from
-  inference.
-- Preserve existing architecture and dependencies unless the story genuinely
-  needs a different approach. Ask before adding a production dependency.
-- Write product-specific copy from verified facts. Never invent customers,
-  metrics, integrations, testimonials, command output, or technical proof.
-- Keep the result original. Do not reproduce Proofjury's courtroom, gate,
-  rubber-stamp, amber-light, or paper-record combination unless the user is
-  deliberately working on that brand.
+- **Audit or strategy:** inspect the current page, product evidence, and rendered
+  behavior. Report findings and a proposed story without editing files.
+- **Focused refactor:** preserve the current brand, page structure, conversion
+  path, analytics, and working interactions. Change only the weak or affected
+  scenes.
+- **Full build:** establish product truth, plan the scene sequence, implement the
+  page, and verify the rendered result.
 
-## Required workflow
+Do not force a full rebuild onto a small request. Do not treat a dashboard,
+application workflow, or component outside a marketing page as a landing-page
+story.
+
+## Load guidance only when needed
+
+| Need | Read |
+| --- | --- |
+| New copy, a new metaphor, or reordered scenes | [references/story-system.md](references/story-system.md) |
+| A supplied reference site or a new motion direction | [references/open-source-patterns.md](references/open-source-patterns.md) |
+| Nontrivial scroll motion, GSAP, smooth scrolling, SVG paths, or WebGL | [references/motion-implementation.md](references/motion-implementation.md) |
+| Audit work or final implementation checks | [references/verification.md](references/verification.md) |
+
+For a full build, read the story and verification references. Read the motion
+reference only if the selected tier needs it.
+
+When the user supplies a reference site, inspect both its source and rendered
+behavior when access permits. Record what works, why it works, what fits the
+current product, and what must be corrected or rejected. Inspect desktop,
+mobile, reduced motion, console output, and real action destinations. Check the
+license before reusing code or assets.
+
+## Full-build workflow
 
 ### 1. Establish product truth
 
-Identify:
+Record:
 
-- audience and their decision context;
+- audience, traffic source, and decision context;
+- what the visitor already knows and their main unresolved objection;
 - single conversion goal;
-- product promise;
-- concrete mechanism that makes the promise credible;
-- strongest real evidence available;
-- one object or idea that can act as the page's protagonist;
-- constraints such as static export, CMS, analytics, forms, or deployment.
+- product promise and the mechanism that makes it credible;
+- strongest real evidence and its source;
+- one native object or idea that can carry the story;
+- constraints such as the existing stack, brand system, static export, CMS,
+  analytics, forms, and deployment.
 
-Do not begin visual implementation until the page can be summarized as:
+Anchor every factual claim to repository content, supplied material, product
+behavior, or an approved source. Never invent customers, metrics, integrations,
+testimonials, command output, or technical proof.
+
+Summarize the concept as:
 
 > For [audience], move [protagonist] through [tension] to [verified outcome],
-> proving it with [evidence], then ask for [conversion].
+> prove it with [evidence], then ask for [conversion].
 
-When the product is underspecified, inspect the repository and make conservative
-assumptions. Ask one targeted question only if a missing answer would materially
-change the page.
+If a missing fact would materially change the result, ask one targeted
+question. Otherwise state a conservative assumption and continue.
 
-### 2. Write the narrative spine
+### 2. Plan only supported scenes
 
-Use five to eight scenes. Adapt this sequence rather than treating it as a
-mandatory template:
+Use as many scenes as the product can honestly support. Do not pad the page to
+reach a fixed count. Treat hook, existing behavior, tension, intervention,
+proof, compounding value, differentiation, and resolution as a menu.
 
-1. **Hook** — introduce the protagonist and one sharp promise.
-2. **Momentum** — show the existing workflow or pressure building.
-3. **Tension** — make the failure, cost, or gap concrete.
-4. **Interruption** — demonstrate the product changing the trajectory.
-5. **Proof** — show receipts, output, before/after behavior, or mechanism.
-6. **Compounding value** — explain memory, scale, collaboration, or reuse.
-7. **Differentiation** — state why the mechanism is structurally different.
-8. **Resolution** — show the desired outcome and present the CTA.
+Before implementation, create a compact scene matrix:
 
-Every scene must answer one question and introduce at most one primary visual
-idea. Read [references/story-system.md](references/story-system.md) before
-writing scene copy or choosing a metaphor.
+| Scene | Visitor question | Claim and source | Evidence | Visual object | Motion purpose | Mobile fallback | Reduced-motion state | CTA relevance |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
 
-### 3. Choose the minimum viable motion tier
+Every scene answers one question and introduces at most one primary visual
+idea. Remove any scene that repeats a claim or lacks useful proof.
 
-Choose the simplest tier that carries the story:
+### 3. Choose a motion tier
 
-- **Editorial:** strong typography, layout, CSS transitions, and small reveals.
-- **Cinematic DOM/SVG:** scene timelines, selective pinning, scrubbed diagrams,
-  and one or two time-based impacts.
-- **Atmospheric WebGL:** one lightweight shader or 3D stage that responds to the
-  same story state as the DOM.
+Choose the simplest tier that explains the story:
 
-Do not use WebGL to compensate for weak structure. Do not animate every
-element. Motion must communicate travel, causality, interruption, state change,
-or hierarchy.
+- **Editorial:** typography, layout, CSS transitions, and small local reveals.
+- **DOM or SVG:** selective pinning, scrubbed diagrams, paths, and short
+  threshold effects.
+- **Atmospheric WebGL:** one lightweight visual atmosphere driven by the same
+  story state as the document.
+
+Reuse the repository's existing motion and scroll system. Prefer CSS or the Web
+Animations API for simple transitions. Add a dependency only with approval.
+
+For each nontrivial animation, record its comprehension purpose, input, start
+and end states, reverse behavior, mobile fallback, reduced-motion state, and
+cleanup owner. Remove animation with no clear explanatory purpose.
 
 ### 4. Define the visual grammar
 
-Create a small semantic system:
+Start from the existing brand and design system. Add only the missing semantic
+roles for typography, surfaces, structure, emphasis, success, failure, spacing,
+width, and evidence.
 
-- two or three typography roles;
-- one surface system;
-- one structural line system;
-- one emphasis color;
-- semantic success and failure colors;
-- a spacing and width rhythm;
-- a distinct visual treatment for evidence.
+When the story changes visual state, update a small token set such as
+`--surface`, `--ink`, `--body`, `--line`, and `--accent`; do not scatter one-off
+theme classes across components.
 
-If the story changes state, define worlds with semantic tokens such as
-`--surface`, `--ink`, `--body`, `--line`, and `--accent`. Change token values,
-not every component class.
+Reject defaults that are not tied to the product:
 
-Avoid generic landing-page defaults unless the product specifically calls for
-them:
-
-- purple gradient blobs;
-- gradient headline text;
+- gradient headlines or decorative blobs;
 - repeated glass cards;
-- fake dashboard screenshots;
+- fake dashboards or terminal output;
 - unsupported metric strips;
 - interchangeable feature-icon grids;
-- motion that consists only of identical fade-ups;
-- vague copy such as "reimagine," "unlock," or "transform" without a mechanism.
+- the same fade-up effect on every section;
+- vague claims without a mechanism.
 
-### 5. Implement a scene architecture
+Reference sites may inform pacing, hierarchy, and interaction structure. Never
+copy their identity, wording, assets, evidence, or signature metaphor.
 
-Keep the route composition simple. Prefer:
+### 5. Implement within the existing architecture
 
-```text
-app/page.tsx
-app/globals.css
-lib/story.ts
-components/experience/
-components/scenes/
-components/ui/
-```
+Follow the host repository's routing, component, styling, data, and animation
+conventions. Split a scene into its own component only when its markup or
+lifecycle benefits from isolation. Create a content module only when copy is
+reused or complex enough to justify one.
 
-- Keep verified copy and evidence in a typed content module.
-- Give each scene one component and one scoped motion context.
-- Use stable `data-scene` and `data-*` hooks for animation and verification.
-- Keep global scrolling, tickers, pointer state, and font refresh logic in one
-  experience root.
-- Keep navigation and CTAs semantic and functional without animation.
-- Render meaningful final-state HTML before client motion initializes.
+- Keep meaningful final-state HTML present before client motion initializes.
+- Keep navigation and conversion actions semantic and functional without
+  animation.
+- Use stable `data-*` hooks when motion or browser checks need them.
+- Keep hot scroll values outside component render cycles.
+- Own global scrolling, tickers, pointer state, and measurement refresh in one
+  experience-level integration.
+- Clean up timelines, listeners, observers, ticker callbacks, media queries,
+  delayed work, and graphics contexts.
 
-Read [references/motion-implementation.md](references/motion-implementation.md)
-when using GSAP, smooth scrolling, SVG path motion, world transitions, or
-WebGL.
+### 6. Design mobile and reduced motion as real modes
 
-### 6. Choreograph cause and effect
+- Inspect at 375 CSS pixels or the product's smallest supported width.
+- Replace hostile pins and horizontal tracks with natural document flow.
+- Keep settled visuals inside the viewport and controls at practical touch
+  sizes. Aim for a 44 by 44 CSS pixel hit area without inflating the visible
+  control.
+- Under `prefers-reduced-motion: reduce`, skip smooth scrolling, decorative
+  WebGL, pins, typing, shaking, and continuous motion.
+- Keep the complete story and every primary action visible with animation
+  disabled or failed.
 
-Separate motion by purpose:
+### 7. Complete the conversion path
 
-- Map continuous travel and reveals to scroll progress.
-- Trigger impacts, stamps, verdicts, snaps, and other decisive moments as
-  short time-based animations at explicit thresholds.
-- Pin only when the scene needs controlled reading time.
-- Return to normal document flow after an intense sequence.
-- Let one protagonist, line, light, or state travel across scenes to create
-  continuity.
-- Give decorative motion less energy than story motion.
-- Keep scroll-path state outside React rendering.
+Repeat the primary action only at meaningful decision points. Verify every
+destination. If the page contains a form, implement and test loading, success,
+error, disabled, repeat-submission, and no-JavaScript behavior as applicable.
+Announce asynchronous results to assistive technology. Do not add form states
+to pages without forms.
 
-Ensure cleanup for every timeline, listener, ticker, observer, media query, and
-graphics context.
+### 8. Verify the rendered story
 
-### 7. Design mobile and reduced motion intentionally
+Use [references/verification.md](references/verification.md). Run the
+repository's relevant checks, inspect representative viewports and story
+checkpoints, exercise keyboard and reduced-motion behavior, inspect console and
+network output, and review the final diff.
 
-- Treat 375 px as a real layout, not a shrunken desktop.
-- Replace complex pinned tracks with natural flow when space or scroll length
-  becomes hostile.
-- Keep decisive visuals inside the viewport after their animation settles.
-- Use fluid type with bounded sizes and readable line lengths.
-- Make touch targets at least 44 CSS pixels where practical.
-- Under `prefers-reduced-motion: reduce`, do not instantiate smooth scrolling
-  or decorative WebGL. Remove pins, typing, shaking, and continuous motion.
-- Ensure the reduced-motion document reads correctly from top to bottom with
-  all important content visible.
-
-### 8. Finish the conversion path
-
-- Repeat the primary CTA only at meaningful decision points.
-- Make external destinations, form endpoints, and no-JavaScript behavior real.
-- Include loading, success, error, disabled, and fallback states for forms.
-- Do not ship placeholder form IDs, dead buttons, or fake interactive controls.
-- Keep the final CTA a resolution of the narrative, not an unrelated banner.
-
-### 9. Verify the complete story
-
-Read [references/verification.md](references/verification.md), then:
-
-- run the relevant lint, type, test, and production-build commands;
-- inspect desktop, mobile, and reduced-motion rendering;
-- inspect key scroll thresholds rather than only the top and bottom;
-- check console errors, horizontal overflow, focus visibility, and CTA/form
-  states;
-- review the final diff for accidental scope, copied identity, invented proof,
-  and unused machinery.
-
-Do not claim the page is complete from a successful build alone.
+Record each result as pass, fail, unverified, or not applicable with direct
+evidence or a specific scope reason. A build or source inspection alone does
+not prove rendered behavior, accessibility, or speed.
 
 ## Output contract
 
-Before meaningful edits, state the narrative assumption and a short plan.
-
-After implementation, report:
+Before a full build, state the product-story assumption and a short plan. After
+implementation, report:
 
 - the story and visual system created;
 - key files changed;
-- behavior at desktop, mobile, and reduced motion;
+- desktop, mobile, and reduced-motion behavior;
 - checks run with exact outcomes;
-- any unverified external integration or remaining blocker.
+- measured speed or bundle changes when available;
+- any external integration or behavior that remains unverified.
 
-Keep the explanation specific to the product. Do not describe a generic
-"modern landing page."
+Keep the report specific to the product. Do not describe the result as a generic
+modern landing page.
